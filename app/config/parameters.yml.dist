@@ -18,3 +18,4 @@ parameters:
     vm_port: 4558
     # A secret key that's used to generate certain security-related tokens
     secret:            8d808dac3c9ee11c441af93d87e3321d0da57774
+    domain: dvelasco.es.dev
