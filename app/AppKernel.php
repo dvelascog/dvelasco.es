@@ -17,44 +17,32 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Application\FrontentBundle\FrontendBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
-            // Add your dependencies
+            // Sonata Bundles
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-            //...
-
-            // If you haven't already, add the storage bundle
-            // This example uses SonataDoctrineORMAdmin but
-            // it works the same with the alternatives
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-
-            // Then add SonataAdminBundle
             new Sonata\AdminBundle\SonataAdminBundle(),
-
-            // Sonata news bundle
-            //new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
-//            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-//            new Sonata\NewsBundle\SonataNewsBundle(),
-//            new Sonata\UserBundle\SonataUserBundle(),
-//            new Sonata\MediaBundle\SonataMediaBundle(),
-//            new Sonata\IntlBundle\SonataIntlBundle(),
-//            new Sonata\FormatterBundle\SonataFormatterBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
-//            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
-
-            // SonataApplication Bundles
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
-            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
-
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            //todo: check if this bundle is really necessary
+            //new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Sonata\NewsBundle\SonataNewsBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
 
+            // Extended Sonata Bundles
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
 
         );
 
