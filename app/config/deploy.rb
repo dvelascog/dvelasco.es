@@ -10,7 +10,7 @@ set :shared_children, %w(app/logs)
 default_run_options[:shell] = '/bin/bash'
 
 set :scm, :git
-set :repository, "git@bitbucket.org:fodaveg/dvelasco.es.git"
+set :repository, "git@github.com:fodaveg/dvelasco.es.git"
 set :deploy_via, :remote_cache
 set :branch, "develop"
 
