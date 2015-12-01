@@ -2,9 +2,14 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_news.yml }
+    - { resource: sonata/sonata_formatter.yml }
+    - { resource: fos/fos_user.yml }
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_media.yml }
+    - { resource: sonata/sonata_classification.yml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
 
@@ -30,6 +35,7 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+    translator: { fallback: "%locale%" }
 
 # Twig Configuration
 twig:
@@ -59,17 +65,15 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
-
+        types:
+            json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+        default_entity_manager: default
+        entity_managers:
+            default:
+                auto_mapping: true
+
 
 # Swiftmailer Configuration
 swiftmailer:
