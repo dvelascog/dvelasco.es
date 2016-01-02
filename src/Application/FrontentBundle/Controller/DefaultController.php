@@ -4,18 +4,28 @@ namespace Application\FrontentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/")
-     * @Template()
      */
     public function homeAction()
     {
+        $template = ':default:home.html.twig';
         $section = 'home';
 
-        return array('section' => $section);
+        return $this->render($template, array('section' => $section));
+    }
+
+    /**
+     * @Route("/about")
+     */
+    public function aboutAction()
+    {
+        $template = ':default:about.html.twig';
+        $section = 'about';
+
+        return $this->render($template, array('section' => $section));
     }
 }
